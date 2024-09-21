@@ -14,6 +14,16 @@ public class CarsFile {
             System.out.println("Error writing to file: " + e.getMessage());
         }
     }
+
+    public static void processOrder(FerrariOrder order) {
+        // Convert order to FerrariCars object and add to CSV
+        String color = order.getColor();
+        String modelType = order.getModelType();
+        FerrariCars newCar = new FerrariCars("Ferrari", modelType, 0, color); // Assuming 0 kms for a new order
+        String csvFile = "/Users/ZiadDawood/Desktop/FMS Data.csv"; // Specify the file path
+        addCarToCsv(csvFile, newCar);
+    }
+
     public static void main(String[] args) {
         String csvFile = "/Users/ZiadDawood/Desktop/FMS Data.csv";
         String line;
@@ -40,7 +50,7 @@ public class CarsFile {
         } catch (IOException e) {
             System.out.println("Please check the file");
         }
-        FerrariCars newCar = new FerrariCars("Ferrari", "F8 Tributo", 5000, "Red");
-        addCarToCsv(csvFile, newCar);
+        /*FerrariCars newCar = new FerrariCars("Ferrari", "F8 Tributo", 5000, "Red");
+        addCarToCsv(csvFile, newCar);*/
     }
 }

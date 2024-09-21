@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public interface CarOrder {
-}
+public interface CarOrder {
+        void orderSpecialCar(String color, String modelType);
+    }
